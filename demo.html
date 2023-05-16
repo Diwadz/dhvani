@@ -1,0 +1,65 @@
+<html>
+<head>
+    <script>
+<!--function handleFiles(event) {-->
+<!--    var files = event.target.files;-->
+<!--    $("#src").attr("src", URL.createObjectURL(files[0]));-->
+<!--    document.getElementById("audio").load();-->
+
+    <!--  ------------------------------api part--------------------------------------- -->
+<!--function myFunction(){-->
+<!--const ctx = new AudioContext();-->
+<!--let audio;-->
+<!--fetch("./sounds/phantom-cities.mp3");-->
+<!--	.then(data => data.arrayBuffer())-->
+<!--	.then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))-->
+<!--	.then(decodedAudio => {-->
+<!--		audio = decodedAudio;-->
+<!--	})-->
+
+<!--  fetch('hai')-->
+<!--  .then(response => {-->
+<!--    //handle response-->
+<!--    console.log(response);-->
+<!--  })-->
+<!--  .then(data => {-->
+<!--    //handle data-->
+<!--    console.log(data);-->
+<!--  })-->
+<!--  .catch(error => {-->
+<!--    //handle error-->
+<!--  });-->
+<!--  }-->
+  <!--  ------------------------------api part end--------------------------------------- -->
+
+<!--}-->
+
+<!--document.getElementById("upload").addEventListener("change", handleFiles, false, upload);-->
+
+    </script>
+<body>
+ Select a file to upload:
+<input type="file" id="myFile" size="50" accept="image/*">
+
+<p>Click the button below to change the value of the accept attribute of the file upload button.</p>
+
+<button onclick="myFunction()">Change accepted file types</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("myFile").accept = "audio/*";
+  const ctx = new AudioContext();
+let audio;
+fetch("./assets/images/backsound.mp3")
+	.then(data => data.arrayBuffer())
+	.then(arrayBuffer => ctx.decodeAudioData(arrayBuffer))
+	.then(decodedAudio => {
+		audio = decodedAudio;
+	})
+}
+</script>
+</body>
+
+</html>

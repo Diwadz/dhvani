@@ -1,0 +1,1473 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+     <meta charset="utf-8" />
+    <title>Dhvani</title>
+     <link rel="icon" href="img/rbg1.png" type="image/x-icon">
+    <meta name="description" content="Never Unprepared" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="/img/RBG logo/rbg1.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/img/RBG logo/rbg1.png" type="image/x-icon" />
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,600"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,600"
+      rel="stylesheet"
+    />
+      <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="/lib/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link href="/css copy/theme.css" rel="stylesheet" />
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.formin.js"></script>
+    <script src="/js/analytics.js"></script>
+    <link href="/css copy/theme.css" rel="stylesheet" />
+    <script src="/js/analytics.js"></script>
+     <!-- BOOTSTRAP STYLES-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+       <!--CUSTOM BASIC STYLES-->
+    <link href="css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <style>
+
+
+.audio-player {
+  height: 50px;
+  width: 350px;
+  background: #444;
+  box-shadow: 0 0 20px 0 #000a;
+
+  font-family: arial;
+  color: white;
+  font-size: 0.75em;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: 6px auto;
+  .timeline {
+    background: white;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 10px 0 #0008;
+    .progress {
+      background: coral;
+      width: 0%;
+      height: 100%;
+      transition: 0.25s;
+    }
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 20px;
+
+    > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .toggle-play {
+      &.play {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        height: 0;
+        width: 0;
+        border: 7px solid #0000;
+        border-left: 13px solid white;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &.pause {
+        height: 15px;
+        width: 20px;
+        cursor: pointer;
+        position: relative;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0px;
+          background: white;
+          content: "";
+          height: 15px;
+          width: 3px;
+        }
+        &:after {
+          position: absolute;
+          top: 0;
+          right: 8px;
+          background: white;
+          content: "";
+          height: 15px;
+          width: 3px;
+        }
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .time {
+      display: flex;
+
+      > * {
+        padding: 2px;
+      }
+    }
+    .volume-container {
+      cursor: pointer;
+      .volume-button {
+        height: 26px;
+        display: flex;
+        align-items: center;
+        .volume {
+          transform: scale(0.7);
+        }
+      }
+
+      position: relative;
+      z-index: 2;
+      .volume-slider {
+        position: absolute;
+        left: -3px; top: 15px;
+        z-index: -1;
+        width: 0;
+        height: 15px;
+        background: white;
+        box-shadow: 0 0 20px #000a;
+        transition: .25s;
+        .volume-percentage {
+          background: coral;
+          height: 100%;
+          width: 75%;
+        }
+      }
+      &:hover {
+        .volume-slider {
+          left: -123px;
+          width: 120px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/* This css is for normalizing styles. You can skip this. */
+.new {
+  padding: 50px 0px 0px 147px;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #0079bf;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.form-group input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+
+
+.listbox-area {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #eee;
+}
+
+[role="listbox"] {
+  margin: 1em 0 0;
+  padding: 0;
+  min-height: 9em;
+  border: 1px solid #2c3e50;
+  background: #2c3e50;
+  color:white;
+}
+
+[role="listbox"]#ss_elem_list {
+  position: relative;
+  max-height: 9em;
+  overflow-y: auto;
+}
+
+[role="listbox"] + *,
+.listbox-label + * {
+  margin-top: 1em;
+}
+
+[role="group"] {
+  margin: 0;
+  padding: 0;
+}
+
+[role="group"] > [role="presentation"] {
+  display: block;
+  margin: 0;
+  padding: 0 0.5em;
+  font-weight: bold;
+  line-height: 2;
+  background-color: #ccc;
+}
+
+[role="option"] {
+  position: relative;
+  display: block;
+  padding: 0 1em 0 1.5em;
+  line-height: 1.8em;
+}
+
+[role="option"].focused {
+  background: #bde4ff;
+}
+
+[role="option"][aria-selected="true"]::before {
+  position: absolute;
+  left: 0.5em;
+  content: "✓";
+}
+
+button[aria-haspopup="listbox"] {
+  position: relative;
+  padding: 5px 10px;
+  width: 150px;
+  border-radius: 0;
+  text-align: left;
+}
+
+button[aria-haspopup="listbox"]::after {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top-color: currentcolor;
+  border-bottom: 0;
+  content: "";
+}
+
+button[aria-haspopup="listbox"][aria-expanded="true"]::after {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top: 0;
+  border-bottom-color: currentcolor;
+  content: "";
+}
+
+button[aria-haspopup="listbox"] + [role="listbox"] {
+  position: absolute;
+  margin: 0;
+  width: 9.5em;
+  max-height: 10em;
+  border-top: 0;
+  overflow-y: auto;
+}
+
+[role="toolbar"] {
+  display: flex;
+}
+
+[role="toolbar"] > * {
+  border: 1px solid #aaa;
+  background: #ccc;
+}
+
+[role="toolbar"] > [aria-disabled="false"]:focus {
+  background-color: #eee;
+}
+
+button {
+  font-size: inherit;
+}
+
+button[aria-disabled="true"] {
+  opacity: 0.5;
+}
+
+.move-right-btn::after {
+  content: " →";
+}
+
+.move-left-btn::before {
+  content: "← ";
+}
+
+.annotate {
+  color: #366ed4;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.offscreen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+    </style>
+
+  </head>
+
+<body>
+ <nav style="background-color:#2c3e50;;" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display-->
+        <div class="navbar-header">
+          <button
+            class="navbar-toggle collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            Menu
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+
+         <a style="background-color: #2c3e50;color:white;" class="navbar-brand page-scroll" href="index1.html">RBG AI Research</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a style="color: #fff" class="page-scroll" href="#">Home</a>
+            </li>
+                <li>
+              <a style="color: #fff" class="page-scroll" href="#">example
+              </a>
+            </li>
+<!--            <li>-->
+<!--              <a class="page-scroll" href="#Contributors">Contributors</a>-->
+<!--            </li>-->
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <div class="container">
+ <div class="row">
+     <div class="col-md-4">
+        <h3 style="color:white;">Speaker 1</h3>
+<audio controls>
+  <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">
+</audio>
+    </div>
+    <div class="col-md-4">
+         <h3 style="color:white;">Phrase Identified</h3>
+
+  <div style="height:200px">
+    <div id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+      <ul role="group" aria-labelledby="cat1">
+
+        <li id="ss_elem_1" role="option">When</li>
+        <li id="ss_elem_2" role="option">How</li>
+        <li id="ss_elem_3" role="option">Remember</li>
+        <li id="ss_elem_4" role="option">Ticket</li>
+        <li id="ss_elem_5" role="option">Bank</li>
+      </ul>
+<!--      <ul role="group" aria-labelledby="cat2">-->
+<!--        <li id="ss_elem_6" role="option">Dolphin</li>-->
+<!--        <li id="ss_elem_7" role="option">Flounder</li>-->
+<!--        <li id="ss_elem_8" role="option">Eel</li>-->
+<!--      </ul>-->
+<!--      <ul role="group" aria-labelledby="cat3">-->
+<!--        <li id="ss_elem_9" role="option">Falcon</li>-->
+<!--        <li id="ss_elem_10" role="option">Winged Horse</li>-->
+<!--        <li id="ss_elem_11" role="option">Owl</li>-->
+<!--      </ul>-->
+    </div>
+  </div>
+
+    </div>
+     <script>
+         /*
+ *   This content is licensed according to the W3C Software License at
+ *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ */
+
+"use strict";
+
+/**
+ * @namespace aria
+ */
+var aria = aria || {};
+
+/**
+ * @class
+ * @description
+ *  Listbox object representing the state and interactions for a listbox widget
+ * @param listboxNode
+ *  The DOM node pointing to the listbox
+ */
+aria.Listbox = function (listboxNode) {
+  this.listboxNode = listboxNode;
+  this.activeDescendant = this.listboxNode.getAttribute(
+    "aria-activedescendant"
+  );
+  this.multiselectable = this.listboxNode.hasAttribute("aria-multiselectable");
+  this.moveUpDownEnabled = false;
+  this.siblingList = null;
+  this.startRangeIndex = 0;
+  this.upButton = null;
+  this.downButton = null;
+  this.moveButton = null;
+  this.keysSoFar = "";
+  this.handleFocusChange = function () {};
+  this.handleItemChange = function () {};
+  this.registerEvents();
+};
+
+/**
+ * @description
+ *  Register events for the listbox interactions
+ */
+aria.Listbox.prototype.registerEvents = function () {
+  this.listboxNode.addEventListener("focus", this.setupFocus.bind(this));
+  this.listboxNode.addEventListener("keydown", this.checkKeyPress.bind(this));
+  this.listboxNode.addEventListener("click", this.checkClickItem.bind(this));
+
+  if (this.multiselectable) {
+    this.listboxNode.addEventListener(
+      "mousedown",
+      this.checkMouseDown.bind(this)
+    );
+  }
+};
+
+/**
+ * @description
+ *  If there is no activeDescendant, focus on the first option
+ */
+aria.Listbox.prototype.setupFocus = function () {
+  if (this.activeDescendant) {
+    return;
+  }
+};
+
+/**
+ * @description
+ *  Focus on the first option
+ */
+aria.Listbox.prototype.focusFirstItem = function () {
+  var firstItem = this.listboxNode.querySelector('[role="option"]');
+
+  if (firstItem) {
+    this.focusItem(firstItem);
+  }
+};
+
+/**
+ * @description
+ *  Focus on the last option
+ */
+aria.Listbox.prototype.focusLastItem = function () {
+  var itemList = this.listboxNode.querySelectorAll('[role="option"]');
+
+  if (itemList.length) {
+    this.focusItem(itemList[itemList.length - 1]);
+  }
+};
+
+/**
+ * @description
+ *  Handle various keyboard controls; UP/DOWN will shift focus; SPACE selects
+ *  an item.
+ * @param evt
+ *  The keydown event object
+ */
+aria.Listbox.prototype.checkKeyPress = function (evt) {
+  var key = evt.which || evt.keyCode;
+  var lastActiveId = this.activeDescendant;
+  var allOptions = this.listboxNode.querySelectorAll('[role="option"]');
+  var currentItem =
+    document.getElementById(this.activeDescendant) || allOptions[0];
+  var nextItem = currentItem;
+
+  if (!currentItem) {
+    return;
+  }
+
+  switch (key) {
+    case aria.KeyCode.PAGE_UP:
+    case aria.KeyCode.PAGE_DOWN:
+      if (this.moveUpDownEnabled) {
+        evt.preventDefault();
+
+        if (key === aria.KeyCode.PAGE_UP) {
+          this.moveUpItems();
+        } else {
+          this.moveDownItems();
+        }
+      }
+
+      break;
+    case aria.KeyCode.UP:
+    case aria.KeyCode.DOWN:
+      if (!this.activeDescendant) {
+        // focus first option if no option was previously focused, and perform no other actions
+        this.focusItem(currentItem);
+        break;
+      }
+
+      if (this.moveUpDownEnabled && evt.altKey) {
+        evt.preventDefault();
+        if (key === aria.KeyCode.UP) {
+          this.moveUpItems();
+        } else {
+          this.moveDownItems();
+        }
+        return;
+      }
+
+      if (key === aria.KeyCode.UP) {
+        nextItem = this.findPreviousOption(currentItem);
+      } else {
+        nextItem = this.findNextOption(currentItem);
+      }
+
+      if (nextItem && this.multiselectable && event.shiftKey) {
+        this.selectRange(this.startRangeIndex, nextItem);
+      }
+
+      if (nextItem) {
+        this.focusItem(nextItem);
+        evt.preventDefault();
+      }
+
+      break;
+    case aria.KeyCode.HOME:
+      evt.preventDefault();
+      this.focusFirstItem();
+
+      if (this.multiselectable && evt.shiftKey && evt.ctrlKey) {
+        this.selectRange(this.startRangeIndex, 0);
+      }
+      break;
+    case aria.KeyCode.END:
+      evt.preventDefault();
+      this.focusLastItem();
+
+      if (this.multiselectable && evt.shiftKey && evt.ctrlKey) {
+        this.selectRange(this.startRangeIndex, allOptions.length - 1);
+      }
+      break;
+    case aria.KeyCode.SHIFT:
+      this.startRangeIndex = this.getElementIndex(currentItem, allOptions);
+      break;
+    case aria.KeyCode.SPACE:
+      evt.preventDefault();
+      this.toggleSelectItem(nextItem);
+      break;
+    case aria.KeyCode.BACKSPACE:
+    case aria.KeyCode.DELETE:
+    case aria.KeyCode.RETURN:
+      if (!this.moveButton) {
+        return;
+      }
+
+      var keyshortcuts = this.moveButton.getAttribute("aria-keyshortcuts");
+      if (key === aria.KeyCode.RETURN && keyshortcuts.indexOf("Enter") === -1) {
+        return;
+      }
+      if (
+        (key === aria.KeyCode.BACKSPACE || key === aria.KeyCode.DELETE) &&
+        keyshortcuts.indexOf("Delete") === -1
+      ) {
+        return;
+      }
+
+      evt.preventDefault();
+
+      var nextUnselected = nextItem.nextElementSibling;
+      while (nextUnselected) {
+        if (nextUnselected.getAttribute("aria-selected") != "true") {
+          break;
+        }
+        nextUnselected = nextUnselected.nextElementSibling;
+      }
+      if (!nextUnselected) {
+        nextUnselected = nextItem.previousElementSibling;
+        while (nextUnselected) {
+          if (nextUnselected.getAttribute("aria-selected") != "true") {
+            break;
+          }
+          nextUnselected = nextUnselected.previousElementSibling;
+        }
+      }
+
+      this.moveItems();
+
+      if (!this.activeDescendant && nextUnselected) {
+        this.focusItem(nextUnselected);
+      }
+      break;
+    case 65:
+      // handle control + A
+      if (this.multiselectable && (evt.ctrlKey || evt.metaKey)) {
+        evt.preventDefault();
+        this.selectRange(0, allOptions.length - 1);
+        break;
+      }
+    // fall through
+    default:
+      var itemToFocus = this.findItemToFocus(key);
+      if (itemToFocus) {
+        this.focusItem(itemToFocus);
+      }
+      break;
+  }
+
+  if (this.activeDescendant !== lastActiveId) {
+    this.updateScroll();
+  }
+};
+
+aria.Listbox.prototype.findItemToFocus = function (key) {
+  var itemList = this.listboxNode.querySelectorAll('[role="option"]');
+  var character = String.fromCharCode(key);
+  var searchIndex = 0;
+
+  if (!this.keysSoFar) {
+    for (var i = 0; i < itemList.length; i++) {
+      if (itemList[i].getAttribute("id") == this.activeDescendant) {
+        searchIndex = i;
+      }
+    }
+  }
+  this.keysSoFar += character;
+  this.clearKeysSoFarAfterDelay();
+
+  var nextMatch = this.findMatchInRange(
+    itemList,
+    searchIndex + 1,
+    itemList.length
+  );
+  if (!nextMatch) {
+    nextMatch = this.findMatchInRange(itemList, 0, searchIndex);
+  }
+  return nextMatch;
+};
+
+/* Return the index of the passed element within the passed array, or null if not found */
+aria.Listbox.prototype.getElementIndex = function (option, options) {
+  var allOptions = Array.prototype.slice.call(options); // convert to array
+  var optionIndex = allOptions.indexOf(option);
+
+  return typeof optionIndex === "number" ? optionIndex : null;
+};
+
+/* Return the next listbox option, if it exists; otherwise, returns null */
+aria.Listbox.prototype.findNextOption = function (currentOption) {
+  var allOptions = Array.prototype.slice.call(
+    this.listboxNode.querySelectorAll('[role="option"]')
+  ); // get options array
+  var currentOptionIndex = allOptions.indexOf(currentOption);
+  var nextOption = null;
+
+  if (currentOptionIndex > -1 && currentOptionIndex < allOptions.length - 1) {
+    nextOption = allOptions[currentOptionIndex + 1];
+  }
+
+  return nextOption;
+};
+
+/* Return the previous listbox option, if it exists; otherwise, returns null */
+aria.Listbox.prototype.findPreviousOption = function (currentOption) {
+  var allOptions = Array.prototype.slice.call(
+    this.listboxNode.querySelectorAll('[role="option"]')
+  ); // get options array
+  var currentOptionIndex = allOptions.indexOf(currentOption);
+  var previousOption = null;
+
+  if (currentOptionIndex > -1 && currentOptionIndex > 0) {
+    previousOption = allOptions[currentOptionIndex - 1];
+  }
+
+  return previousOption;
+};
+
+aria.Listbox.prototype.clearKeysSoFarAfterDelay = function () {
+  if (this.keyClear) {
+    clearTimeout(this.keyClear);
+    this.keyClear = null;
+  }
+  this.keyClear = setTimeout(
+    function () {
+      this.keysSoFar = "";
+      this.keyClear = null;
+    }.bind(this),
+    500
+  );
+};
+
+aria.Listbox.prototype.findMatchInRange = function (
+  list,
+  startIndex,
+  endIndex
+) {
+  // Find the first item starting with the keysSoFar substring, searching in
+  // the specified range of items
+  for (var n = startIndex; n < endIndex; n++) {
+    var label = list[n].innerText;
+    if (label && label.toUpperCase().indexOf(this.keysSoFar) === 0) {
+      return list[n];
+    }
+  }
+  return null;
+};
+
+/**
+ * @description
+ *  Check if an item is clicked on. If so, focus on it and select it.
+ * @param evt
+ *  The click event object
+ */
+aria.Listbox.prototype.checkClickItem = function (evt) {
+  if (evt.target.getAttribute("role") !== "option") {
+    return;
+  }
+
+  this.focusItem(evt.target);
+  this.toggleSelectItem(evt.target);
+  this.updateScroll();
+
+  if (this.multiselectable && evt.shiftKey) {
+    this.selectRange(this.startRangeIndex, evt.target);
+  }
+};
+
+/**
+ * Prevent text selection on shift + click for multi-select listboxes
+ *
+ * @param evt
+ */
+aria.Listbox.prototype.checkMouseDown = function (evt) {
+  if (
+    this.multiselectable &&
+    evt.shiftKey &&
+    evt.target.getAttribute("role") === "option"
+  ) {
+    evt.preventDefault();
+  }
+};
+
+/**
+ * @description
+ *  Toggle the aria-selected value
+ * @param element
+ *  The element to select
+ */
+aria.Listbox.prototype.toggleSelectItem = function (element) {
+  if (this.multiselectable) {
+    element.setAttribute(
+      "aria-selected",
+      element.getAttribute("aria-selected") === "true" ? "false" : "true"
+    );
+
+    this.updateMoveButton();
+  }
+};
+
+/**
+ * @description
+ *  Defocus the specified item
+ * @param element
+ *  The element to defocus
+ */
+aria.Listbox.prototype.defocusItem = function (element) {
+  if (!element) {
+    return;
+  }
+  if (!this.multiselectable) {
+    element.removeAttribute("aria-selected");
+  }
+  element.classList.remove("focused");
+};
+
+/**
+ * @description
+ *  Focus on the specified item
+ * @param element
+ *  The element to focus
+ */
+aria.Listbox.prototype.focusItem = function (element) {
+  this.defocusItem(document.getElementById(this.activeDescendant));
+  if (!this.multiselectable) {
+    element.setAttribute("aria-selected", "true");
+  }
+  element.classList.add("focused");
+  this.listboxNode.setAttribute("aria-activedescendant", element.id);
+  this.activeDescendant = element.id;
+
+  if (!this.multiselectable) {
+    this.updateMoveButton();
+  }
+
+  this.checkUpDownButtons();
+  this.handleFocusChange(element);
+};
+
+/**
+ * Helper function to check if a number is within a range; no side effects.
+ *
+ * @param index
+ * @param start
+ * @param end
+ * @returns {boolean}
+ */
+aria.Listbox.prototype.checkInRange = function (index, start, end) {
+  var rangeStart = start < end ? start : end;
+  var rangeEnd = start < end ? end : start;
+
+  return index >= rangeStart && index <= rangeEnd;
+};
+
+/**
+ * Select a range of options
+ *
+ * @param start
+ * @param end
+ */
+aria.Listbox.prototype.selectRange = function (start, end) {
+  // get start/end indices
+  var allOptions = this.listboxNode.querySelectorAll('[role="option"]');
+  var startIndex =
+    typeof start === "number" ? start : this.getElementIndex(start, allOptions);
+  var endIndex =
+    typeof end === "number" ? end : this.getElementIndex(end, allOptions);
+
+  for (var index = 0; index < allOptions.length; index++) {
+    var selected = this.checkInRange(index, startIndex, endIndex);
+    allOptions[index].setAttribute("aria-selected", selected + "");
+  }
+
+  this.updateMoveButton();
+};
+
+/**
+ * Check for selected options and update moveButton, if applicable
+ */
+aria.Listbox.prototype.updateMoveButton = function () {
+  if (!this.moveButton) {
+    return;
+  }
+
+  if (this.listboxNode.querySelector('[aria-selected="true"]')) {
+    this.moveButton.setAttribute("aria-disabled", "false");
+  } else {
+    this.moveButton.setAttribute("aria-disabled", "true");
+  }
+};
+
+/**
+ * Check if the selected option is in view, and scroll if not
+ */
+aria.Listbox.prototype.updateScroll = function () {
+  var selectedOption = document.getElementById(this.activeDescendant);
+  if (
+    selectedOption &&
+    this.listboxNode.scrollHeight > this.listboxNode.clientHeight
+  ) {
+    var scrollBottom =
+      this.listboxNode.clientHeight + this.listboxNode.scrollTop;
+    var elementBottom = selectedOption.offsetTop + selectedOption.offsetHeight;
+    if (elementBottom > scrollBottom) {
+      this.listboxNode.scrollTop =
+        elementBottom - this.listboxNode.clientHeight;
+    } else if (selectedOption.offsetTop < this.listboxNode.scrollTop) {
+      this.listboxNode.scrollTop = selectedOption.offsetTop;
+    }
+  }
+};
+
+/**
+ * @description
+ *  Enable/disable the up/down arrows based on the activeDescendant.
+ */
+aria.Listbox.prototype.checkUpDownButtons = function () {
+  var activeElement = document.getElementById(this.activeDescendant);
+
+  if (!this.moveUpDownEnabled) {
+    return;
+  }
+
+  if (!activeElement) {
+    this.upButton.setAttribute("aria-disabled", "true");
+    this.downButton.setAttribute("aria-disabled", "true");
+    return;
+  }
+
+  if (this.upButton) {
+    if (activeElement.previousElementSibling) {
+      this.upButton.setAttribute("aria-disabled", false);
+    } else {
+      this.upButton.setAttribute("aria-disabled", "true");
+    }
+  }
+
+  if (this.downButton) {
+    if (activeElement.nextElementSibling) {
+      this.downButton.setAttribute("aria-disabled", false);
+    } else {
+      this.downButton.setAttribute("aria-disabled", "true");
+    }
+  }
+};
+
+/**
+ * @description
+ *  Add the specified items to the listbox. Assumes items are valid options.
+ * @param items
+ *  An array of items to add to the listbox
+ */
+aria.Listbox.prototype.addItems = function (items) {
+  if (!items || !items.length) {
+    return;
+  }
+
+  items.forEach(
+    function (item) {
+      this.defocusItem(item);
+      this.toggleSelectItem(item);
+      this.listboxNode.append(item);
+    }.bind(this)
+  );
+
+  if (!this.activeDescendant) {
+    this.focusItem(items[0]);
+  }
+
+  this.handleItemChange("added", items);
+};
+
+/**
+ * @description
+ *  Remove all of the selected items from the listbox; Removes the focused items
+ *  in a single select listbox and the items with aria-selected in a multi
+ *  select listbox.
+ * @returns {Array}
+ *  An array of items that were removed from the listbox
+ */
+aria.Listbox.prototype.deleteItems = function () {
+  var itemsToDelete;
+
+  if (this.multiselectable) {
+    itemsToDelete = this.listboxNode.querySelectorAll('[aria-selected="true"]');
+  } else if (this.activeDescendant) {
+    itemsToDelete = [document.getElementById(this.activeDescendant)];
+  }
+
+  if (!itemsToDelete || !itemsToDelete.length) {
+    return [];
+  }
+
+  itemsToDelete.forEach(
+    function (item) {
+      item.remove();
+
+      if (item.id === this.activeDescendant) {
+        this.clearActiveDescendant();
+      }
+    }.bind(this)
+  );
+
+  this.handleItemChange("removed", itemsToDelete);
+
+  return itemsToDelete;
+};
+
+aria.Listbox.prototype.clearActiveDescendant = function () {
+  this.activeDescendant = null;
+  this.listboxNode.setAttribute("aria-activedescendant", null);
+
+  this.updateMoveButton();
+  this.checkUpDownButtons();
+};
+
+/**
+ * @description
+ *  Shifts the currently focused item up on the list. No shifting occurs if the
+ *  item is already at the top of the list.
+ */
+aria.Listbox.prototype.moveUpItems = function () {
+  if (!this.activeDescendant) {
+    return;
+  }
+
+  var currentItem = document.getElementById(this.activeDescendant);
+  var previousItem = currentItem.previousElementSibling;
+
+  if (previousItem) {
+    this.listboxNode.insertBefore(currentItem, previousItem);
+    this.handleItemChange("moved_up", [currentItem]);
+  }
+
+  this.checkUpDownButtons();
+};
+
+/**
+ * @description
+ *  Shifts the currently focused item down on the list. No shifting occurs if
+ *  the item is already at the end of the list.
+ */
+aria.Listbox.prototype.moveDownItems = function () {
+  if (!this.activeDescendant) {
+    return;
+  }
+
+  var currentItem = document.getElementById(this.activeDescendant);
+  var nextItem = currentItem.nextElementSibling;
+
+  if (nextItem) {
+    this.listboxNode.insertBefore(nextItem, currentItem);
+    this.handleItemChange("moved_down", [currentItem]);
+  }
+
+  this.checkUpDownButtons();
+};
+
+/**
+ * @description
+ *  Delete the currently selected items and add them to the sibling list.
+ */
+aria.Listbox.prototype.moveItems = function () {
+  if (!this.siblingList) {
+    return;
+  }
+
+  var itemsToMove = this.deleteItems();
+  this.siblingList.addItems(itemsToMove);
+};
+
+/**
+ * @description
+ *  Enable Up/Down controls to shift items up and down.
+ * @param upButton
+ *   Up button to trigger up shift
+ * @param downButton
+ *   Down button to trigger down shift
+ */
+aria.Listbox.prototype.enableMoveUpDown = function (upButton, downButton) {
+  this.moveUpDownEnabled = true;
+  this.upButton = upButton;
+  this.downButton = downButton;
+  upButton.addEventListener("click", this.moveUpItems.bind(this));
+  downButton.addEventListener("click", this.moveDownItems.bind(this));
+};
+
+/**
+ * @description
+ *  Enable Move controls. Moving removes selected items from the current
+ *  list and adds them to the sibling list.
+ * @param button
+ *   Move button to trigger delete
+ * @param siblingList
+ *   Listbox to move items to
+ */
+aria.Listbox.prototype.setupMove = function (button, siblingList) {
+  this.siblingList = siblingList;
+  this.moveButton = button;
+  button.addEventListener("click", this.moveItems.bind(this));
+};
+
+aria.Listbox.prototype.setHandleItemChange = function (handlerFn) {
+  this.handleItemChange = handlerFn;
+};
+
+aria.Listbox.prototype.setHandleFocusChange = function (focusChangeHandler) {
+  this.handleFocusChange = focusChangeHandler;
+};
+/*
+ *   This content is licensed according to the W3C Software License at
+ *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+ */
+
+/* global aria */
+
+("use strict");
+
+/**
+ * ARIA Scrollable Listbox Example
+ *
+ * @function onload
+ * @description Initialize the listbox example once the page has loaded
+ */
+
+window.addEventListener("load", function () {
+  new aria.Listbox(document.getElementById("ss_elem_list"));
+});
+("use strict");
+/**
+ * @namespace aria
+ */
+
+var aria = aria || {};
+
+/**
+ * @description
+ *  Key code constants
+ */
+aria.KeyCode = {
+  BACKSPACE: 8,
+  TAB: 9,
+  RETURN: 13,
+  SHIFT: 16,
+  ESC: 27,
+  SPACE: 32,
+  PAGE_UP: 33,
+  PAGE_DOWN: 34,
+  END: 35,
+  HOME: 36,
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+  DELETE: 46
+};
+
+aria.Utils = aria.Utils || {};
+
+// Polyfill src https://developer.mozilla.org/en-US/docs/Web/API/Element/matches
+aria.Utils.matches = function (element, selector) {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches =
+      Element.prototype.matchesSelector ||
+      Element.prototype.mozMatchesSelector ||
+      Element.prototype.msMatchesSelector ||
+      Element.prototype.oMatchesSelector ||
+      Element.prototype.webkitMatchesSelector ||
+      function (s) {
+        var matches = element.parentNode.querySelectorAll(s);
+        var i = matches.length;
+        while (--i >= 0 && matches.item(i) !== this) {
+          // empty
+        }
+        return i > -1;
+      };
+  }
+
+  return element.matches(selector);
+};
+
+aria.Utils.remove = function (item) {
+  if (item.remove && typeof item.remove === "function") {
+    return item.remove();
+  }
+  if (
+    item.parentNode &&
+    item.parentNode.removeChild &&
+    typeof item.parentNode.removeChild === "function"
+  ) {
+    return item.parentNode.removeChild(item);
+  }
+  return false;
+};
+
+aria.Utils.isFocusable = function (element) {
+  if (element.tabIndex < 0) {
+    return false;
+  }
+
+  if (element.disabled) {
+    return false;
+  }
+
+  switch (element.nodeName) {
+    case "A":
+      return !!element.href && element.rel != "ignore";
+    case "INPUT":
+      return element.type != "hidden";
+    case "BUTTON":
+    case "SELECT":
+    case "TEXTAREA":
+      return true;
+    default:
+      return false;
+  }
+};
+
+aria.Utils.getAncestorBySelector = function (element, selector) {
+  if (!aria.Utils.matches(element, selector + " " + element.tagName)) {
+    // Element is not inside an element that matches selector
+    return null;
+  }
+
+  // Move up the DOM tree until a parent matching the selector is found
+  var currentNode = element;
+  var ancestor = null;
+  while (ancestor === null) {
+    if (aria.Utils.matches(currentNode.parentNode, selector)) {
+      ancestor = currentNode.parentNode;
+    } else {
+      currentNode = currentNode.parentNode;
+    }
+  }
+
+  return ancestor;
+};
+
+aria.Utils.hasClass = function (element, className) {
+  return new RegExp("(\\s|^)" + className + "(\\s|$)").test(element.className);
+};
+
+aria.Utils.addClass = function (element, className) {
+  if (!aria.Utils.hasClass(element, className)) {
+    element.className += " " + className;
+  }
+};
+
+aria.Utils.removeClass = function (element, className) {
+  var classRegex = new RegExp("(\\s|^)" + className + "(\\s|$)");
+  element.className = element.className.replace(classRegex, " ").trim();
+};
+
+aria.Utils.bindMethods = function (object /* , ...methodNames */) {
+  var methodNames = Array.prototype.slice.call(arguments, 1);
+  methodNames.forEach(function (method) {
+    object[method] = object[method].bind(object);
+  });
+};
+
+     </script>
+    <div class="col-md-4">
+        <h3 style="color:white;">Choose the fraudster</h3>
+        <div class="new">
+  <form>
+    <div class="form-group">
+      <input type="checkbox" id="html">
+      <label for="html"></label>
+    </div>
+  </form>
+</div>
+
+    </div>
+ </div>
+ </div>
+ <br>
+ <br>
+ <div class="container">
+ <div class="row">
+    <div class="col-md-4">
+        <h3 style="color:white;">Speaker 2</h3>
+<audio controls>
+  <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">
+</audio>
+    </div>
+     <div class="col-md-4">
+          <h3 style="color:white;">Phrase Identified</h3>
+          <div>
+    <div id="ss_elem_list" tabindex="0" role="listbox" aria-labelledby="ss_elem">
+      <ul role="group" aria-labelledby="cat1">
+        <li id="ss_elem_1" role="option">Money</li>
+        <li id="ss_elem_2" role="option">Rupees</li>
+        <li id="ss_elem_3" role="option">Lakhs</li>
+        <li id="ss_elem_4" role="option">Today</li>
+        <li id="ss_elem_5" role="option">Reimburse</li>
+      </ul>
+      <ul role="group" aria-labelledby="cat2">
+
+        <li id="ss_elem_6" role="option">Lottery</li>
+        <li id="ss_elem_7" role="option">Winner</li>
+        <li id="ss_elem_8" role="option">Pin</li>
+      </ul>
+<!--      <ul role="group" aria-labelledby="cat3">-->
+<!--        <li id="ss_elem_9" role="option">Falcon</li>-->
+<!--        <li id="ss_elem_10" role="option">Winged Horse</li>-->
+<!--        <li id="ss_elem_11" role="option">Owl</li>-->
+<!--      </ul>-->
+    </div>
+  </div>
+    </div>
+    <div class="col-md-4">
+        <h3 style="color:white;">Choose the fraudster</h3>
+          <div style=" padding: 50px 0px 0px 147px;"class="new">
+  <form>
+     <div class="form-group">
+      <input type="checkbox" id="javascript">
+      <label for="javascript"></label>
+    </div>
+      <br>
+      <br>
+      <button><a href="index.html" style="background-color:#1abc9c;color:white;">Proceed</a> </button>
+  </form>
+   </div>
+    </div>
+ </div>
+ </div>
+
+
+
+
+
+
+<!--<div class="row">-->
+<!--<div class="col-md-12">-->
+<!--  <h1 style="color:white;">Player 1</h1>-->
+<!--<audio controls>-->
+<!--  <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">-->
+<!--</audio>-->
+<!--  </div>-->
+<!--<div class="col-md-12">-->
+<!--  <h1 style="color:white;">Player 2</h1>-->
+<!--<audio controls>-->
+<!--  <source src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"  type="audio/mp3">-->
+<!--</audio>-->
+<!--  </div>-->
+<!--</div>-->
+ <br>
+ <br>
+      <div style="background-color:#2c3e50;;" id="contact" class="teamc">
+      <div class="container">
+      <div class="row">
+
+            <style>
+              h { text-indent: 25px; }
+          </style>
+           <div style="text-align:center;color:#fff" class="section-heading"><h1>Contacts</h1></div>
+
+        </div>
+
+          <div class="bottom">
+          <div class="row">
+          <div class="col-md-6">
+               <div class="feature1-item">
+            <a href="index.html"><img  src="img/rbg1.png" /></a>
+               </div>
+            <h4>
+            <span style="color:#fff;">
+              RBG.AI,<br>SREC SPARK Incubation Foundation,<br> Sri Ramakrishna Engineering College,Coimbatore<br> Tamil Nadu 641 022,India
+              </span>
+             </h4>
+            <h4>
+              <span style="color:#fff;">
+                If you have queries about our work, contact us at
+              </span>
+            </h4>
+            <p>
+              <a href="mailto: research@rbg.ai">
+                <span style="color:#fff;">research@rbg.ai</span>
+              </a>
+            </p>
+          </div>
+            <div class="col-md-6">
+                <div class="feature2-item">
+               <ul1 class="top">
+                 <li1><a class="linkedin"  href="https://in.linkedin.com/company/rbg-ai"></a></li1>
+                 <li1><a class="youtube"  href="https://www.youtube.com/c/RBGAI"></a></li1>
+                 <li1><a class="facebook"  href="https://m.facebook.com/people/RBGAI/100070859903620/"></a></li1>
+                 <li1><a class="twitter"  href="https://mobile.twitter.com/rbg_ai"></a></li1>
+                 <li1><a class="github"  href="https://github.com/rbg-research"></a></li1>
+             </ul1>
+                    </div>
+              </div>
+
+            </div>
+        <br>
+        <br>
+
+        <hr />
+        <p style="text-align:center;color:#fff">© 2022 RBG.AI. All rights reserved.</p>
+            </div>
+
+      </div>
+  </div>
+<!-- BOOTSTRAP SCRIPTS -->
+    <script src="js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="js/custom1.js"></script>
+</body>
+</html>
+
+
+
+
+
+

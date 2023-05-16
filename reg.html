@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+     <meta charset="utf-8" />
+    <title>RBG.AI </title>
+    <meta name="description" content="Never Unprepared" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="/img/RBG logo/rbg1.png"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/img/RBG logo/rbg1.png" type="image/x-icon" />
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,600"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Muli:400,600"
+      rel="stylesheet"
+    />
+      <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="/lib/simple-line-icons/css/simple-line-icons.css"
+    />
+    <link href="/css copy/theme.css" rel="stylesheet" />
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.formin.js"></script>
+    <script src="/js/analytics.js"></script>
+    <link href="/css copy/theme.css" rel="stylesheet" />
+    <script src="/js/analytics.js"></script>
+     <!-- BOOTSTRAP STYLES-->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+       <!--CUSTOM BASIC STYLES-->
+    <link href="css/basic.css" rel="stylesheet" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS-->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/* all */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+/* containersx and form */
+.containersx {
+  max-width: 700px;
+  width: 100%;
+  background: #202326;
+  padding: 25px 30px;
+  border-radius: 5px;
+  margin: 75px 88px 56px 424px;margin: 75px 88px 56px 300px;
+}
+.containersx .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.containersx .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: #1abc9c;
+  left: 0;
+  bottom: 0;
+}
+
+.containersx form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .user__details .input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.user__details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+  border-color: #1abc9c;
+}
+
+/* inside the form gender details */
+
+form .gender__details .gender__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .gender__details .category {
+  display: flex;
+  width: 80%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.gender__details .category label {
+  display: flex;
+  align-items: center;
+}
+
+.gender__details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: var(--sub-grey);
+  background: #1abc9c;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background:#1abc9c;
+
+}
+
+form .button input:hover {
+  background:#333;
+}
+
+@media only screen and (max-width: 584px) {
+  .containersx {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+  .containersx form .user__details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+
+
+    </style>
+
+  </head>
+
+<body>
+ <nav style="background-color:#2c3e50;;" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display-->
+        <div class="navbar-header">
+          <button
+            class="navbar-toggle collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            Menu
+            <i class="fa fa-bars"></i>
+          </button>
+
+
+
+         <a style="background-color: #2c3e50;color:white;" class="navbar-brand page-scroll" href="reg.html">RBG AI Research</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a style="color: #fff" class="page-scroll" href="#">Home</a>
+            </li>
+                <li>
+              <a style="color: #fff" class="page-scroll" href="#">example
+              </a>
+            </li>
+<!--            <li>-->
+<!--              <a class="page-scroll" href="#Contributors">Contributors</a>-->
+<!--            </li>-->
+
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+<div class="containersx">
+  <div style="color:#fff;" class="title">Registration</div>
+  <form action="#">
+    <div class="user__details">
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Full Name</span>
+        <input type="text" placeholder="Full Name" required>
+      </div>
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Username</span>
+        <input type="text" placeholder="Username" required>
+      </div>
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Email</span>
+        <input type="email" placeholder="Email" required>
+      </div>
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Phone Number</span>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Ph.No" required>
+      </div>
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Password</span>
+        <input type="password" placeholder="password" required>
+      </div>
+      <div class="input__box">
+        <span style="color:#fff;" class="details">Confirm Password</span>
+        <input type="password" placeholder="Password" required>
+      </div>
+
+    </div>
+    <div class="gender__details">
+      <input type="radio" name="gender" id="dot-1">
+      <input type="radio" name="gender" id="dot-2">
+      <input type="radio" name="gender" id="dot-3">
+      <span style="color:#fff;" class="gender__title">Gender</span>
+      <div class="category">
+        <label for="dot-1">
+          <span class="dot one"></span>
+          <span style="color:#fff;">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span style="color:#fff;">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span style="color:#fff;">Prefer not to say</span>
+        </label>
+      </div>
+    </div>
+    <div class="button">
+      <input type="submit" value="Register">
+    </div>
+  </form>
+</div>
+
+
+                <div style="background-color:#2c3e50;;" id="contact" class="teamc">
+      <div class="container">
+        <div class="row">
+
+            <style>
+              h { text-indent: 25px; }
+          </style>
+           <div style="text-align:center;color:#fff" class="section-heading"><h1>Contacts</h1></div>
+
+        </div>
+
+          <div class="bottom">
+          <div class="row">
+          <div class="col-md-6">
+               <div class="feature1-item">
+            <a href="index.html"><img  src="img/rbg1.png" /></a>
+               </div>
+            <h4>
+            <span style="color:#fff;">
+              RBG.AI,<br>SREC SPARK Incubation Foundation,<br> Sri Ramakrishna Engineering College,Coimbatore<br> Tamil Nadu 641 022,India
+              </span>
+             </h4>
+            <h4>
+              <span style="color:#fff;">
+                If you have queries about our work, contact us at
+              </span>
+            </h4>
+            <p>
+              <a href="mailto: research@rbg.ai">
+                <span style="color:#fff;">research@rbg.ai</span>
+              </a>
+            </p>
+          </div>
+            <div class="col-md-6">
+                <div class="feature2-item">
+               <ul1 class="top">
+                 <li1><a class="linkedin"  href="https://in.linkedin.com/company/rbg-ai"></a></li1>
+                 <li1><a class="youtube"  href="https://www.youtube.com/c/RBGAI"></a></li1>
+                 <li1><a class="facebook"  href="https://m.facebook.com/people/RBGAI/100070859903620/"></a></li1>
+                 <li1><a class="twitter"  href="https://mobile.twitter.com/rbg_ai"></a></li1>
+                 <li1><a class="github"  href="https://github.com/rbg-research"></a></li1>
+             </ul1>
+                    </div>
+              </div>
+
+            </div>
+        <br>
+        <br>
+
+        <hr />
+        <p style="text-align:center;color:#fff">© 2022 RBG.AI. All rights reserved.</p>
+            </div>
+
+      </div>
+  </div>
+<!-- BOOTSTRAP SCRIPTS -->
+    <script src="js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="js/jquery.metisMenu.js"></script>
+       <!-- CUSTOM SCRIPTS -->
+    <script src="js/custom1.js"></script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+

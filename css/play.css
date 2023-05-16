@@ -1,0 +1,23 @@
+body {
+  padding: 20px 30px;
+}
+
+p {
+  padding-top: .25rem;
+  width: 15rem;
+}
+
+.slds-grid {
+  max-width: 40rem;
+}
+
+/* TODO: update when multiselect is supported */
+*[role='listbox']:focus *[aria-selected='true'],
+*[role='option'][aria-selected='true']:focus {
+  font-style: italic;
+  background-color: #004989;
+}
+
+*[role='listbox']:focus {
+  outline: none;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+   audio {
+        border-radius: 0px;
+         }
+
+    </style>
+</head>
+<body>
+     <input type="file" onchange="previewFile()" accept="audio/*"><br>
+
+<div id="result"></div>
+
+<script>
+function previewFile() {
+ var preview = document.querySelector('audio');
+ var file = document.querySelector('input[type=file]').files[0];
+ var reader = new FileReader();
+
+ reader.addEventListener("load", function () {
+ preview.src = reader.result;
+ }, false);
+
+ if (file) {
+ reader.readAsDataURL(file);
+ }
+}
+<!--  ------------------------------api part--------------------------------------- -->
+
+  fetch('hai')
+  .then(response => {
+    //handle response
+    console.log(response);
+  })
+  .then(data => {
+    //handle data
+    console.log(data);
+  })
+  .catch(error => {
+    //handle error
+  });
+  <!--  ------------------------------api part end--------------------------------------- -->
+
+
+  </script>
+
+</body>
+</html>
